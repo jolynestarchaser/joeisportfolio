@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "type": "editor",
+    "date": "16 MARCH 2024",
+    "title": "Street Life Documentary",
+    "description": "A short film capturing the essence of night life. Focused on color grading and rhythmic cutting.",
+    "image": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80",
+    "tags": ["Premiere Pro", "DaVinci Resolve"],
+    "link": "https://www.youtube.com/watch?v=..."
+  },
+  {
+    "id": 2,
+    "type": "code",
+    "date": "12 FEB 2024",
+    "categoryLabel": "WEB DEV",
+    "title": "Starchaser Dashboard",
+    "description": "E-commerce management system built with React and Tailwind CSS. Featuring real-time analytics.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    "tags": ["React", "Tailwind", "Firebase"],
+    "link": "https://www.youtube.com/watch?v=..."
+  },
+  {
+    "id": 3,
+    "type": "design",
+    "date": "05 JAN 2024",
+    "title": "Abstract Lotus Branding",
+    "description": "Visual identity for a boutique studio. Concept focuses on 'Sigilism' and minimalist lines.",
+    "image": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=800&q=80",
+    "tags": ["Illustrator", "Branding", "Vector"],
+    "link": "https://www.youtube.com/watch?v=..."
+  },
+  {
+    "id": 4,
+    "type": "code",
+    "date": "20 DEC 2023",
+    "categoryLabel": "FRONTEND",
+    "title": "Interactive Portfolio",
+    "description": "Personal portfolio website with smooth animations and responsive design.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    "tags": ["React", "Framer Motion"],
+    "link": "https://www.youtube.com/watch?v=..."
+  }
+]
