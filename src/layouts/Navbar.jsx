@@ -20,7 +20,7 @@ function Navbar() {
   return (
     // ใช้ sticky top-0 เพื่อให้ Navbar ลอยติดขอบบนสุดเสมอ
     // ใช้ flex flex-row และ gap-4 เพื่อเรียงปุ่มแนวนอนและเว้นช่องไฟ
-    <div className="w-full sticky top-0 z-50 flex flex-row flex-wrap justify-center items-center py-6 gap-4 bg-white/90 backdrop-blur-md border-b border-black/10">
+    <div className="w-full sticky top-0 z-50 flex flex-row flex-wrap justify-center items-center py-6 gap-4  backdrop-blur-md ">
       {navItems.map((item, index) => (
         <MainButton
           key={index}

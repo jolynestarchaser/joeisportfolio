@@ -1,15 +1,17 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 function PortfolioCard({
   type = "design",
   title,
   description,
   image,
+  video, // รับ prop video เข้ามา
   date,
   tags = [],
   aspect = "square",
   categoryLabel,
-  link, // 1. เพิ่ม prop link รับค่า URL เข้ามา
+  link,
 }) {
   const aspectStyles = {
     "9:16": "aspect-[9/16]",
@@ -18,6 +20,19 @@ function PortfolioCard({
     video: "aspect-video",
     web: "aspect-[16/10]",
   };
+  const [thumb, setThumb] = useState(image);
+
+  useEffect(() => {
+    // ถ้าไม่มีรูปและเป็น graphic ให้ดึง OG image จาก link
+    if (!image && type === "design" && link) {
+      fetch(`https://api.microlink.io/?url=${encodeURIComponent(link)}`)
+        .then((r) => r.json())
+        .then((data) => {
+          if (data?.data?.image?.url) setThumb(data.data.image.url);
+        })
+        .catch(() => {});
+    }
+  }, [image, type, link]);
 
   const defaultAspect = {
     editor: aspect === "square" ? "aspect-[9/16]" : aspectStyles[aspect],
@@ -42,15 +57,29 @@ function PortfolioCard({
         </span>
       </div>
 
-      {/* --- Image Section --- */}
+      {/* --- Image / Video Section --- */}
       <div
         className={`w-full overflow-hidden border-y border-black/10 bg-gray-50`}
       >
-        <img
-          src={image}
-          alt={title}
-          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${defaultAspect[type] || aspectStyles[aspect]}`}
-        />
+        {/* เช็คว่ามี video ไหม ถ้ามีให้เล่นวิดีโอ ถ้าไม่มีให้โชว์รูป */}
+        {video ? (
+          <video
+            src={`${video}#t=0.1`}
+            preload="metadata"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={image || undefined}
+            className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${defaultAspect[type] || aspectStyles[aspect]}`}
+          />
+        ) : (
+          <img
+            src={image}
+            alt={title}
+            className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${defaultAspect[type] || aspectStyles[aspect]}`}
+          />
+        )}
       </div>
 
       {/* --- Content Section --- */}

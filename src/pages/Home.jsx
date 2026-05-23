@@ -4,13 +4,13 @@ import Iwas from "../assets/iwascreated.svg";
 import Lotus1 from "../assets/lotus.png";
 import Lotus2 from "../assets/sigil.webp";
 import Joe from "../assets/me.webp";
+import SmoothImage from "../components/SmoothImage";
 
 function Home() {
   const navItems = [
     {
       title: "01. Starchaser's Hood",
       href: "/",
-      // เติม max-lg: เข้าไปเพื่อขยับเฉพาะมือถือ
       positionStyle: "ml-0 mt-0 max-lg:ml-0 max-lg:mt-0",
     },
     {
@@ -33,7 +33,7 @@ function Home() {
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
       {/* --- Navbar ด้านขวา --- */}
-      {/* โค้ดคอมพิวเตอร์เหมือนเดิมเป๊ะ เพิ่มแค่ max-lg: ย่อส่วนให้มือถือ */}
+
       <div className="absolute right-4/34 top-32 flex flex-col items-start z-50 max-lg:right-2 max-lg:top-20 max-lg:scale-75 max-lg:origin-top-right">
         {navItems.map((item, index) => (
           <MainButton
@@ -48,13 +48,15 @@ function Home() {
       <Textbox className="absolute bottom-20 left-30 z-30 max-lg:bottom-10 max-lg:left-4 max-lg:scale-75 max-lg:origin-bottom-left" />
 
       {/* --- ส่วนรูปภาพ --- */}
-      {/* Lotus1 & Iwas */}
       <div className="relative left-2/8 mt-5 scale-150 max-lg:absolute max-lg:-left-10 max-lg:top-10 max-lg:scale-50 max-lg:origin-top-left">
+        {/* Lotus1: เป็นพื้นหลัง ให้รอโหลดทีหลังได้ (Lazy Load) */}
         <img
           src={Lotus1}
           className="absolute left-25 right-100 bottom-20 top-0 w-auto h-[350px] z-0 mix-blend-multiply"
           alt="Lotus ascii"
         />
+
+        {/* Iwas (ข้อความ): สำคัญมาก สั่งลัดคิวโหลด (High Priority) */}
         <img
           src={Iwas}
           className="absolute left-20 top-10 w-auto h-[200px] z-10 max-lg:h-[150px]"
@@ -62,14 +64,14 @@ function Home() {
         />
       </div>
 
-      {/* Lotus2 */}
+      {/* Lotus2: เป็นลายเส้นพื้นหลัง ให้รอโหลดทีหลัง (Lazy Load) */}
       <img
         src={Lotus2}
         className="absolute left-4/7 w-auto h-[1200px] z-0 mix-blend-multiply max-lg:left-auto max-lg:-right-32 max-lg:h-[600px] max-lg:opacity-30"
         alt="Lotus sigilism"
       />
 
-      {/* Joe */}
+      {/* Joe (รูปคน): เป็นจุดโฟกัสหลักของหน้า สั่งลัดคิวโหลด (High Priority) */}
       <img
         src={Joe}
         className="absolute left-2/5 translate-2.5 top-[65px] w-auto h-[900px] z-20 pointer-events-none max-lg:left-1/2 max-lg:-translate-x-1/2 max-lg:top-auto max-lg:bottom-0 max-lg:h-[65vh] max-lg:object-contain"

@@ -31,6 +31,23 @@ function About() {
     "FL STUDIO",
   ];
   const database = ["Firebase", "Supabase", "Figma"];
+  const skills = [
+    "Packaging design",
+    "Poster design",
+    "Ads poster",
+    "Short video",
+    "Long video",
+    "Sticker Label",
+    "Mock-up",
+    "Logo design",
+    "Branding design",
+    "Beat sampling",
+    "User Experience design",
+    "User Interface design",
+    "Web/App design",
+    "App design",
+    "MC ( Master of Ceremonies )",
+  ];
   const aiInte = [
     "OpenAI API Intergration",
     "Gemini API Intergration",
@@ -82,6 +99,15 @@ function About() {
           </ul>
         </div>
         <div className="border p-2 w-10/12 mb-4 ">
+          <h1 className="font-bold text-3xl w-fit ">My skills</h1>
+
+          <ul className="grid grid-cols-4">
+            {skills.map((e) => {
+              return <li className="my-2">★-{e}</li>;
+            })}
+          </ul>
+        </div>
+        <div className="border p-2 w-10/12 mb-4 ">
           <h1 className="font-bold text-3xl w-fit ">AI Integration</h1>
 
           <ul className="grid grid-cols-4">
@@ -90,7 +116,7 @@ function About() {
             })}
           </ul>
         </div>
-        <div className="border p-2 w-10/12 mb-4 ">
+        {/* <div className="border p-2 w-10/12 mb-4 ">
           <h1 className="font-bold text-3xl w-fit ">Language</h1>
 
           <ul className="grid grid-cols-4">
@@ -98,7 +124,7 @@ function About() {
               return <li className="my-2">★-{e}</li>;
             })}
           </ul>
-        </div>
+        </div> */}
         <div className="flex flex-col relative items-end  w-10/12 ">
           <img
             src={Bd}

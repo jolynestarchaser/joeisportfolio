@@ -85,6 +85,8 @@ function Portfolio() {
               title={item.title}
               description={item.description}
               image={item.image}
+              video={item.video} // ส่งค่า video เข้าไป
+              aspect={item.aspect}
               tags={item.tags}
               categoryLabel={item.categoryLabel}
               link={item.link}
