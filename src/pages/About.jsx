@@ -1,6 +1,7 @@
 import Cv from "../assets/cv.jpg";
 import Ab from "../assets/head/about.svg";
 import Id from "../assets/id.jpg";
+import Bd from "../assets/buddha.png";
 
 function About() {
   const stacks = [
@@ -29,8 +30,15 @@ function About() {
     "Adobe PremirePro",
     "FL STUDIO",
   ];
+  const database = ["Firebase", "Supabase", "Figma"];
+  const aiInte = [
+    "OpenAI API Intergration",
+    "Gemini API Intergration",
+    "LINE Messaging API",
+  ];
+  const language = ["Thai : Native", "English : Conversation"];
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-2 mb-5">
       <div className="pl-22">
         <img className="border border-black w-full " src={Cv} />
       </div>
@@ -40,6 +48,11 @@ function About() {
           <img src={Ab} className=" w-[50%]  inline-block " />
 
           <span className="absolute  scale-2500 rotate-25 right-65">★</span>
+        </div>
+        <div className="w-10/12 p2 mb-4 border">
+          {" "}
+          FYI : ENTP7W6 connect with Buddhism and spiritual , Tarot, Kabbalah,
+          Mantra and SWAG
         </div>
         <div className=" border p-2 w-10/12 mb-4">
           <h1 className="font-bold text-3xl w-fit ">Tech Stack</h1>
@@ -59,9 +72,42 @@ function About() {
             })}
           </ul>
         </div>
-        <div className="flex flex-col items-end pr-48 ">
-          <img className="w-1/2 border border-black " src={Id} />
+        <div className="border p-2 w-10/12 mb-4 ">
+          <h1 className="font-bold text-3xl w-fit ">Database</h1>
+
+          <ul className="grid grid-cols-4">
+            {database.map((e) => {
+              return <li className="my-2">★-{e}</li>;
+            })}
+          </ul>
         </div>
+        <div className="border p-2 w-10/12 mb-4 ">
+          <h1 className="font-bold text-3xl w-fit ">AI Integration</h1>
+
+          <ul className="grid grid-cols-4">
+            {aiInte.map((e) => {
+              return <li className="my-2">★-{e}</li>;
+            })}
+          </ul>
+        </div>
+        <div className="border p-2 w-10/12 mb-4 ">
+          <h1 className="font-bold text-3xl w-fit ">Language</h1>
+
+          <ul className="grid grid-cols-4">
+            {language.map((e) => {
+              return <li className="my-2">★-{e}</li>;
+            })}
+          </ul>
+        </div>
+        <div className="flex flex-col relative items-end  w-10/12 ">
+          <img
+            src={Bd}
+            className=" absolute bottom-2 scale-85 mix-blend-multiply opacity-40"
+          />
+        </div>
+        {/* <div className="flex flex-col items-end  w-10/12 ">
+          <img className="w-1/2 border border-black " src={Id} />
+        </div> */}
       </div>
     </div>
   );
