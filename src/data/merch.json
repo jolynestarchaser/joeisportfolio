@@ -4,8 +4,8 @@
     "type": "tshirt",
     "title": "Dream State Hoodie",
     "price": 100,
-    "description": "Heavyweight hoodie with puff print typography.",
-    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80",
+    "description": ".",
+    "image": "",
     "tags": ["Apparel", "Cotton"]
   },
   {
@@ -14,7 +14,7 @@
     "title": "The 11:11 Hoodie",
     "price": 100,
     "description": "Premium oversized hoodie for everyday wear.",
-    "image": "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=800&q=80",
+    "image": "",
     "tags": ["Apparel", "Oversized"]
   },
   {
@@ -23,7 +23,7 @@
     "title": "Studded Angel Tank",
     "price": 50,
     "description": "Ribbed tank top with custom metal studs.",
-    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+    "image": "",
     "tags": ["Apparel", "Tank"]
   },
   {
@@ -32,7 +32,7 @@
     "title": "Starchaser Logo Pack",
     "price": 15,
     "description": "High-quality die-cut vinyl stickers.",
-    "image": "https://images.unsplash.com/photo-1584844055088-341a95267d61?auto=format&fit=crop&w=800&q=80",
+    "image": "",
     "tags": ["Accessory", "Vinyl"]
   },
   {
@@ -41,7 +41,7 @@
     "title": "Abstract Sigil Print",
     "price": 45,
     "description": "A3 fine art print on premium matte paper.",
-    "image": "https://images.unsplash.com/photo-1583215286595-3ab766e4d6d6?auto=format&fit=crop&w=800&q=80",
+    "image": "",
     "tags": ["Art", "Print"]
   }
 ]

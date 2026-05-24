@@ -24,6 +24,7 @@ function Portfolio() {
   return (
     <div className="flex flex-col w-full min-h-screen bg-white">
       {/* --- ส่วน Hero Banner --- */}
+
       <div className="flex flex-row w-full h-[60vh] overflow-hidden">
         {panels.map((panel) => {
           const isSelected = selected === panel.id;
