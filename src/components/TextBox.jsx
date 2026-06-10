@@ -2,26 +2,28 @@ import React from "react";
 
 function Textbox({ className = "" }) {
   return (
-    // ใส่ max-w-lg เพื่อจำกัดความกว้างของกล่องข้อความไม่ให้ยาวเกินไป
-    <div className={`flex flex-col max-w-xl text-black ${className}`}>
+    <div
+      className={`mb-30 flex flex-col w-full max-w-xl text-black ${className}`}
+    >
       {/* --- ส่วน Heading --- */}
-      <div className="mb-10">
-        <span className="text-gray-500 text-xl md:text-xl font-sarabun font-medium tracking-tight">
+      <div className="mb-6 md:mb-10">
+        <span className="text-gray-500 text-lg md:text-xl font-sarabun font-medium tracking-tight">
           Creative Developer
         </span>
-        <div className="flex items-baseline gap-4 mb-1">
-          {/* คำว่า Design ใช้ฟอนต์ serif และทำตัวเอียง เพื่อเลียนแบบฟอนต์สคริปต์ในภาพ */}
-          <span className="text-7xl md:text-[8rem] font-extrabold leading-none font-sarabun">
+
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+          <span className="text-6xl md:text-[8rem] font-extrabold leading-none font-sarabun">
             JOLYNE
           </span>
-          <span className="text-3xl md:text-5xl font-sans font-medium tracking-tight">
+          <span className="text-2xl md:text-5xl font-sans font-medium tracking-tight">
             Starchaser
           </span>
         </div>
       </div>
 
       {/* --- ส่วน Paragraphs --- */}
-      <div className="flex flex-col gap-5 text-sm md:text-base font-light leading-relaxed tracking-wide text-gray-800">
+      {/* 👇 จุดที่แก้ไข: เปลี่ยนจาก text-sm เป็น text-xs หรือกำหนดเองเช่น text-[12px] ได้เลยครับ */}
+      <div className="flex flex-col gap-4 md:gap-5 text-xs md:text-base font-light leading-relaxed tracking-wide text-gray-800 break-words ">
         <p>
           Motivated Junior Software Developer with a MERN stack bootcamp
           certification and 4 years of professional graphic design experience.

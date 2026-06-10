@@ -16,9 +16,7 @@ import { ReactLenis, useLenis } from "lenis/react";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const lenis = useLenis((lenis) => {
-    console.log(lenis);
-  });
+  const lenis = useLenis((lenis) => {});
 
   return (
     <>
@@ -34,7 +32,6 @@ function App() {
           element={
             <>
               <Home />
-              <About />
             </>
           }
         />

@@ -1,7 +1,9 @@
 import Cv from "../assets/cv.jpg";
+import Aci from "../assets/aci.png";
 import Ab from "../assets/head/about.svg";
 import Id from "../assets/id.jpg";
 import Bd from "../assets/buddha.png";
+import "./About.css"; // ⬅️ อย่าลืม import CSS
 
 function About() {
   const stacks = [
@@ -53,87 +55,55 @@ function About() {
     "Gemini API Intergration",
     "LINE Messaging API",
   ];
-  const language = ["Thai : Native", "English : Conversation"];
+
+  // 💡 จับกลุ่มข้อมูลเป็น Array เพื่อให้โค้ดสั้นลงและไม่ต้องเขียนกล่องซ้ำๆ
+  const sections = [
+    { title: "Tech Stack", data: stacks },
+    { title: "Tools", data: toolstacks },
+    { title: "Database", data: database },
+    { title: "My skills", data: skills },
+    { title: "AI Integration", data: aiInte },
+  ];
+
   return (
-    <div className="grid grid-cols-2 mb-5">
-      <div className="pl-22">
-        <img className="border border-black w-full " src={Cv} />
+    <div className="about-container">
+      {/* โซนรูปภาพด้านซ้าย */}
+      <div className="about-left-zone">
+        <img className="about-profile-img" src={Aci} alt="Profile" />
       </div>
 
-      <div className=" pl-10 w-full">
-        <div className="">
-          <img src={Ab} className=" w-[50%]  inline-block " />
-
-          <span className="absolute  scale-2500 rotate-25 right-65">★</span>
+      {/* โซนเนื้อหาด้านขวา */}
+      <div className="about-right-zone">
+        {/* หัวข้อ About และดาว */}
+        <div className="about-header-wrapper">
+          <img src={Ab} className="about-header-img" alt="About" />
+          <span className="about-star">★</span>
         </div>
-        <div className="w-10/12 p2 mb-4 border">
-          {" "}
+
+        {/* กล่อง FYI */}
+        <div className="about-fyi-box">
           FYI : ENTP7W6 connect with Buddhism and spiritual , Tarot, Kabbalah,
           Mantra and SWAG
         </div>
-        <div className=" border p-2 w-10/12 mb-4">
-          <h1 className="font-bold text-3xl w-fit ">Tech Stack</h1>
 
-          <ul className="grid grid-cols-4">
-            {stacks.map((e) => {
-              return <li className="my-2">★-{e}</li>;
-            })}
-          </ul>
-        </div>
-        <div className="border p-2 w-10/12 mb-4 ">
-          <h1 className="font-bold text-3xl w-fit ">Tools</h1>
+        {/* 💡 ลูปสร้างกล่องหมวดหมู่ต่างๆ อัตโนมัติ (ช่วยลดโค้ดลงไปได้เยอะมาก) */}
+        {sections.map((section, index) => (
+          <div key={index} className="about-section-box">
+            <h1 className="about-section-title">{section.title}</h1>
+            <ul className="about-list">
+              {section.data.map((item, idx) => (
+                <li key={idx} className="about-list-item">
+                  <span className="about-list-icon">★</span> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
-          <ul className="grid grid-cols-4">
-            {toolstacks.map((e) => {
-              return <li className="my-2">★-{e}</li>;
-            })}
-          </ul>
+        {/* รูปพระพุทธรูปด้านล่าง */}
+        <div className="about-footer-zone">
+          <img src={Bd} className="about-buddha-img" alt="Buddha Graphic" />
         </div>
-        <div className="border p-2 w-10/12 mb-4 ">
-          <h1 className="font-bold text-3xl w-fit ">Database</h1>
-
-          <ul className="grid grid-cols-4">
-            {database.map((e) => {
-              return <li className="my-2">★-{e}</li>;
-            })}
-          </ul>
-        </div>
-        <div className="border p-2 w-10/12 mb-4 ">
-          <h1 className="font-bold text-3xl w-fit ">My skills</h1>
-
-          <ul className="grid grid-cols-4">
-            {skills.map((e) => {
-              return <li className="my-2">★-{e}</li>;
-            })}
-          </ul>
-        </div>
-        <div className="border p-2 w-10/12 mb-4 ">
-          <h1 className="font-bold text-3xl w-fit ">AI Integration</h1>
-
-          <ul className="grid grid-cols-4">
-            {aiInte.map((e) => {
-              return <li className="my-2">★-{e}</li>;
-            })}
-          </ul>
-        </div>
-        {/* <div className="border p-2 w-10/12 mb-4 ">
-          <h1 className="font-bold text-3xl w-fit ">Language</h1>
-
-          <ul className="grid grid-cols-4">
-            {language.map((e) => {
-              return <li className="my-2">★-{e}</li>;
-            })}
-          </ul>
-        </div> */}
-        <div className="flex flex-col relative items-end  w-10/12 ">
-          <img
-            src={Bd}
-            className=" absolute bottom-2 scale-85 mix-blend-multiply opacity-40"
-          />
-        </div>
-        {/* <div className="flex flex-col items-end  w-10/12 ">
-          <img className="w-1/2 border border-black " src={Id} />
-        </div> */}
       </div>
     </div>
   );

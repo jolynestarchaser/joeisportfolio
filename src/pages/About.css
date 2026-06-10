@@ -1,0 +1,184 @@
+/* =========================================
+   1. สำหรับหน้าจอมือถือ (Mobile)
+   ========================================= */
+
+.about-container {
+  display: flex;
+  flex-direction: column; /* มือถือให้เรียงรูปไว้บน เนื้อหาไว้ล่าง */
+  gap: 2rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.about-left-zone {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.about-profile-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 0.5rem;
+}
+
+.about-right-zone {
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.about-header-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.about-header-img {
+  width: 60%;
+  display: inline-block;
+}
+
+.about-star {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 1.2rem;
+  transform: scale(2.5) rotate(25deg);
+}
+
+.about-fyi-box {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+}
+
+.about-section-box {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-section-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+/* 💡 ปรับการแสดงผลของลิสต์ (Tech Stack, Skills) */
+.about-list {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* มือถือแบ่งแค่ 2 คอลัมน์ จะได้ไม่ทับกัน */
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.about-list-item {
+  display: flex;
+  align-items: flex-start;
+  word-break: break-word; /* ถ้าคำยาวไปให้ตัดขึ้นบรรทัดใหม่ */
+}
+
+.about-list-icon {
+  margin-right: 0.25rem;
+  margin-top: 0.1rem;
+}
+
+.about-footer-zone {
+  position: relative;
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-buddha-img {
+  position: absolute;
+  bottom: -1rem;
+  transform: scale(0.75);
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* =========================================
+   2. สำหรับหน้าจอแท็บเล็ต (Tablet) 
+   (หน้าจอขนาด 768px ขึ้นไป)
+   ========================================= */
+@media (min-width: 768px) {
+  .about-list {
+    grid-template-columns: repeat(3, 1fr); /* แท็บเล็ตขยับเป็น 3 คอลัมน์ */
+  }
+  .about-star {
+    right: 8rem;
+  }
+}
+
+/* =========================================
+   3. สำหรับหน้าจอคอมพิวเตอร์ (Desktop) 
+   (หน้าจอขนาด 1024px ขึ้นไป)
+   ========================================= */
+@media (min-width: 1024px) {
+  .about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* จอคอมแบ่งครึ่ง ซ้าย-ขวา */
+    gap: 0;
+  }
+
+  .about-left-zone {
+    padding-left: 5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .about-profile-img {
+    max-width: none;
+  }
+
+  .about-right-zone {
+    padding-left: 2.5rem;
+  }
+
+  .about-header-img {
+    width: 50%;
+  }
+
+  .about-star {
+    right: 16rem;
+  }
+
+  /* ในจอคอมบีบความกว้างของกล่องข้อความลงมานิดนึงให้ดูเป็นสัดส่วน (10/12) */
+  .about-fyi-box,
+  .about-section-box,
+  .about-footer-zone {
+    width: 83.333333%;
+  }
+
+  .about-fyi-box {
+    font-size: 1rem;
+  }
+
+  .about-section-title {
+    font-size: 1.875rem;
+  }
+
+  .about-list {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* จอคอมขยายเป็น 4 คอลัมน์ตามดีไซน์เดิมของคุณ */
+    gap: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .about-buddha-img {
+    bottom: 0.5rem;
+    transform: scale(0.85);
+  }
+}

@@ -1,0 +1,197 @@
+/* =========================================
+   1. การตั้งค่าพื้นฐาน & สำหรับหน้าจอมือถือ (Mobile)
+   ========================================= */
+
+.home-container {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: clip;
+  background-color: #ffffff;
+}
+
+.home-bg-lotus {
+  position: absolute;
+  top: 5rem;
+  right: -10rem;
+  width: auto;
+  height: 800px;
+  opacity: 0.6;
+  z-index: 0;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.home-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column; /* มือถือให้เรียงจากบนลงล่าง */
+  width: 100%;
+  min-height: 100dvh;
+  padding: 3rem 1.5rem;
+}
+
+/* --- โซนซ้าย --- */
+.home-left-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 30;
+  mix-blend-mode: multiply;
+}
+
+.home-iwas-img {
+  width: 90%;
+  max-width: 1000px; /* ⬅️ ลองเพิ่ม/ลด เลขตรงนี้ดูครับ ถ้าอยากให้รูปเล็กลงลองเปลี่ยนเป็น 300px */
+  object-fit: contain;
+  transform-origin: left;
+}
+
+.home-textbox-wrapper {
+  margin-top: -2rem; /* 💡 ใส่ค่าติดลบเพื่อดึงกล่องข้อความให้ขยับขึ้นไปชิดรูปภาพครับ (ลองแก้เลขดูได้) */
+  width: 100%;
+  max-width: 500px; /* ⬅️ บีบให้กล่องข้อความแคบลงหรือกว้างขึ้นตรงนี้ */
+  text-align: center; /* มือถือให้ตัวหนังสืออยู่ตรงกลาง */
+}
+
+/* --- โซนกลาง --- */
+.home-center-zone {
+  margin-top: 3rem;
+  display: flex;
+
+  justify-content: center;
+  z-index: 20;
+}
+
+.home-joe-img {
+  height: 50vh;
+  min-height: 300px;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03))
+    drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08));
+}
+
+/* --- โซนขวา (ปุ่ม) --- */
+.home-right-zone {
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 40;
+}
+
+.nav-item-wrapper {
+  width: 260px;
+}
+
+/* =========================================
+   2. สำหรับหน้าจอคอมพิวเตอร์ (Desktop) 
+   (หน้าจอขนาด 1024px ขึ้นไป)
+   ========================================= */
+@media (min-width: 1024px) {
+  .home-bg-lotus {
+    top: -5%;
+    right: -5%;
+    height: 1100px;
+    opacity: 0.4;
+  }
+
+  .home-content {
+    display: block; /* ปลดล็อก Flex คืนค่าสู่ปกติเพื่อให้ Absolute ทำงานได้ */
+    padding: 0;
+  }
+
+  /* จัดวางโซนซ้ายอิสระ */
+  .home-left-zone {
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    align-items: flex-start;
+    /* 💡 ทริคเสริม: ถ้าอยากย่อ/ขยายทั้งกรุ๊ป (ทั้งรูปและข้อความ) ไปพร้อมๆ กัน 
+       สามารถใช้คำสั่ง transform: scale(0.8); หรือ scale(1.2); ใส่ตรงนี้ได้เลยครับ */
+  }
+
+  .home-iwas-img {
+    width: auto;
+    height: 600px; /* ⬅️ ปรับความสูงของรูปในจอคอมตรงนี้ (พอมันสูงขึ้น มันจะกว้างขึ้นตามสัดส่วนเอง) */
+  }
+
+  .home-textbox-wrapper {
+    margin-top: -1rem; /* 💡 ปรับระยะห่างเฉพาะจอคอมตรงนี้ */
+    max-width: 800px; /* ⬅️ ปรับความกว้างของ Textbox ในจอคอมตรงนี้ */
+    text-align: left; /* จอคอมชิดซ้าย */
+  }
+
+  /* จัดวางรูปคนตรงกลางอิสระ */
+  .home-center-zone {
+    margin-top: 0;
+    position: absolute;
+    bottom: 0;
+    left: 52%;
+    transform: translateX(-50%);
+  }
+
+  .home-joe-img {
+    height: 85vh;
+  }
+
+  /* จัดวางปุ่มด้านขวาอิสระ */
+  .home-right-zone {
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: 10%;
+    right: 8%;
+  }
+
+  .nav-item-wrapper {
+    width: auto;
+    margin: 1.25rem 0; /* ระยะห่างบนล่างของปุ่มในจอคอม */
+  }
+
+  /* ตำแหน่งสลับฟันปลาของปุ่มเฉพาะใน Desktop */
+  .nav-item-1 {
+    margin-left: 0;
+  }
+  .nav-item-2 {
+    margin-left: 7rem;
+  }
+  .nav-item-3 {
+    margin-left: 4rem;
+  }
+  .nav-item-4 {
+    margin-left: 12rem;
+  }
+  .nav-item-5 {
+    margin-left: 4rem;
+  }
+
+  /* =========================================
+   3. สำหรับหน้าจอขนาดใหญ่มาก (Extra Large Desktop)
+   (หน้าจอขนาด 1280px ขึ้นไป)
+   ========================================= */
+  @media (min-width: 1280px) {
+    .home-left-zone {
+      left: 8%; /* ขยับตำแหน่งเข้าหากลางจออีกนิด */
+    }
+
+    .home-iwas-img {
+      height: 500px; /* ⬅️ ปรับให้รูปสูงขึ้นอีกนิดสำหรับจอใหญ่ */
+    }
+
+    .home-textbox-wrapper {
+      max-width: 450px; /* ⬅️ ขยายให้กล่องข้อความกว้างขึ้น บรรทัดจะได้ไม่ตัดสั้นเกินไป */
+    }
+    .home-joe-img {
+      height: 90vh;
+    }
+    .home-right-zone {
+      top: 12%;
+      right: 12%;
+    }
+  }
+}
