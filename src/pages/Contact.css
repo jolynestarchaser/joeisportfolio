@@ -1,0 +1,64 @@
+/* =========================================
+   1. สำหรับหน้าจอมือถือ (Mobile First)
+   ========================================= */
+
+.contact-container {
+  position: relative;
+  width: 100%;
+  height: 100dvh; /* ล็อกความสูงพอดีจอ */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.5rem; /* px-6 */
+}
+
+.contact-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+
+  /* พลิกวิดีโอซ้ายขวาตามโค้ดเดิมของคุณ */
+  transform: scaleX(-1);
+
+  /* 💡 1. กำหนดจุดเริ่มต้นของวิดีโอ (ลองปรับเปอร์เซ็นต์ดูครับ 0% คือซ้ายสุด 100% คือขวาสุด) */
+  object-position: 70% bottom;
+
+  /* 💡 2. ลูกเล่นเสริม: แอนิเมชันให้วิดีโอขยับแพนซ้าย-ขวาช้าๆ ในจอมือถือ (ถ้าไม่ชอบลบทิ้งได้ครับ) */
+  animation: panVideoMobile 15s infinite alternate ease-in-out;
+}
+
+/* Keyframes สำหรับให้วิดีโอขยับไปมา */
+@keyframes panVideoMobile {
+  0% {
+    object-position: 20% bottom;
+  }
+  100% {
+    object-position: 80% bottom;
+  }
+}
+
+/* =========================================
+   2. สำหรับหน้าจอแท็บเล็ตและคอมพิวเตอร์ (Desktop) 
+   ========================================= */
+@media (min-width: 768px) {
+  .contact-container {
+    padding: 0 4rem; /* md:px-16 */
+  }
+
+  .contact-video {
+    /* ในจอคอมสัดส่วนภาพแนวนอนพอดีอยู่แล้ว ให้โฟกัสตรงกลางและปิดแอนิเมชันครับ */
+    object-position: center bottom;
+    animation: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-container {
+    padding: 0 6rem; /* lg:px-24 */
+  }
+}
