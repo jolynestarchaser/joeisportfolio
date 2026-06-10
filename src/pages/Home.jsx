@@ -15,7 +15,7 @@ function Home() {
     },
     {
       title: "02. CV and Profiles ",
-      href: "/portfolio",
+      href: "/about",
       customClass: "nav-item-2",
     },
     {
@@ -23,13 +23,13 @@ function Home() {
       href: "/portfolio",
       customClass: "nav-item-3",
     },
+    // {
+    //   title: "04. Merchandise",
+    //   href: "/merchandise",
+    //   customClass: "nav-item-4",
+    // },
     {
-      title: "04. Merchandise",
-      href: "/merchandise",
-      customClass: "nav-item-4",
-    },
-    {
-      title: "05. Connect Me",
+      title: "04. Connect Me",
       href: "/contact",
       customClass: "nav-item-5",
     },

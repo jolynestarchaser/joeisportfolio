@@ -77,7 +77,7 @@ function About() {
         {/* หัวข้อ About และดาว */}
         <div className="about-header-wrapper">
           <img src={Ab} className="about-header-img" alt="About" />
-          <span className="about-star">★</span>
+
         </div>
 
         {/* กล่อง FYI */}

@@ -1,0 +1,95 @@
+/* =========================================
+   1. สำหรับหน้าจอมือถือ (Mobile) - แสดง Icon เป็นหลัก
+   ========================================= */
+
+.navbar-container {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 0; /* py-3 */
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem; /* ระยะห่างระหว่างไอคอนในมือถือ */
+}
+
+/* สไตล์พื้นฐานของไอคอนในมือถือ */
+.navbar-mobile-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem;
+  border-radius: 9999px;
+  color: #4b5563; /* text-gray-600 */
+  transition: all 0.3s ease-in-out;
+}
+
+/* สไตล์เมื่อเอาเมาส์ชี้ไอคอน (หรือตอนกดทัช) */
+.navbar-mobile-item:hover:not(.active) {
+  color: #000;
+  background-color: #f3f4f6; /* bg-gray-100 */
+  transform: scale(1.05);
+}
+
+/* สไตล์ไอคอนตอนที่ "กำลังอยู่ในหน้านั้น" (Active) */
+.navbar-mobile-item.active {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ⚠️ ซ่อนปุ่ม Desktop ในหน้าจอมือถือ */
+.navbar-desktop-item {
+  display: none; 
+}
+
+
+/* =========================================
+   2. สำหรับหน้าจอแท็บเล็ตและคอมพิวเตอร์ (Desktop) 
+   (หน้าจอขนาด 768px ขึ้นไป)
+   ========================================= */
+@media (min-width: 768px) {
+  .navbar-container {
+    padding: 1.5rem 0; /* ขยายขอบบนล่างให้กว้างขึ้น (py-6) */
+  }
+
+  .navbar-wrapper {
+    gap: 1rem; /* ขยับระยะห่างของปุ่ม Desktop */
+  }
+
+  /* ⚠️ ซ่อนไอคอนเมื่อเปิดบนจอคอมพิวเตอร์ */
+  .navbar-mobile-item {
+    display: none; 
+  }
+
+  /* ✅ โชว์ปุ่ม MainButton เมื่อเปิดบนจอคอมพิวเตอร์ */
+  .navbar-desktop-item {
+    display: block; 
+    transform: scale(0.9); /* ย่อปุ่มนิดนึงในจอแท็บเล็ต */
+    transform-origin: center;
+  }
+}
+
+/* =========================================
+   3. สำหรับหน้าจอคอมพิวเตอร์ขนาดใหญ่ 
+   (หน้าจอขนาด 1024px ขึ้นไป)
+   ========================================= */
+@media (min-width: 1024px) {
+  .navbar-desktop-item {
+    transform: scale(1); /* ขยายปุ่มกลับมาขนาดปกติ 100% */
+  }
+}
