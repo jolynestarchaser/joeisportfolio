@@ -18,9 +18,12 @@ function Contact() {
 
       {/* --- คอนเทนต์ฝั่งซ้าย --- */}
       <div className="relative z-10 w-full md:w-2/3 lg:w-1/2 flex flex-col gap-10">
-        
         {/* หัวข้อหลัก */}
-        <img src={ChaserLogo} className="w-[40%] md:w-[30%]" alt="Chaser Logo" />
+        <img
+          src={ChaserLogo}
+          className="w-[40%] md:w-[30%]"
+          alt="Chaser Logo"
+        />
         <h1 className="text-white font-black text-6xl md:text-[80px] lg:text-[100px] leading-[0.85] tracking-tighter [text-shadow:0_0_15px_rgba(255,255,255,0.6),0_0_30px_rgba(255,255,255,0.4)]">
           GET IN TOUCH
           <br />
@@ -33,7 +36,7 @@ function Contact() {
           <p className="text-white font-bold text-sm tracking-widest [text-shadow:0_0_10px_rgba(255,255,255,0.8)]">
             ( CONTACT )
           </p>
-          
+
           {/* Social Icons Section */}
           <div className="flex gap-6 mt-2 mb-4">
             <a
@@ -68,10 +71,10 @@ function Contact() {
               let's connect
             </p>
             <a
-              href="mailto:mrkaokungkub@gmail.com"
+              href="mailto:jolynestarchaseronline@gmail.com"
               className="text-white font-medium text-3xl md:text-4xl tracking-tight transition-all duration-300 hover:scale-105 origin-left [text-shadow:0_0_5px_rgba(255,255,255,0.8),0_0_5px_rgba(255,255,255,0.5)]"
             >
-              mrkaokungkub@gmail.com
+              jolynestarchaseronline@gmail.com
             </a>
           </div>
         </div>
