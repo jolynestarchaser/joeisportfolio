@@ -52,9 +52,9 @@ function Home() {
         </div>
 
         {/* 2. โซนกลาง: รูปคน (Joe) */}
-        <div className="home-center-zone">
+        {/* <div className="home-center-zone">
           <img src={Joe} className="home-joe-img" alt="Jolyne Starchaser" />
-        </div>
+        </div> */}
 
         {/* 3. โซนขวา: ปุ่ม Navigation */}
         <div className="home-right-zone">
